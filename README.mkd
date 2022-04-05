@@ -43,17 +43,17 @@ PPJoy.Analog0 = smooth(removeunits(maprange(Wiimote.SmoothPitch, -150, 150, -1, 
 
 | 기능 | 키보드 | Wii 리모컨 |
 | - | - | - |
-| 가속 | `W` | `Right` |
-| 브레이크 / 후진 | `S` |`Left` |
-| 스티어링 좌측 | `A` |`Up` |
-| 스티어링 우측 | `D` |`Down` |
-| 주차 브레이크 | `Space` |`B` |
-| 왼쪽 방향지시등 | `]` |`1` |
-| 오른쪽 방향지시등 | `\` |`2` |
-| 라이트 | `L` |`-` |
-| 경적 | `H` |`A` |
-| 와이퍼 | `P` |`+` |
-| 인테리어 카메라 | `1` |`Home` |
+| 가속 | <kbd>W</kbd> | <kbd>Right</kbd> |
+| 브레이크 / 후진 | <kbd>S</kbd> | <kbd>Left</kbd> |
+| 스티어링 좌측 | <kbd>A</kbd> | <kbd>Up</kbd> |
+| 스티어링 우측 | <kbd>D</kbd> | <kbd>Down</kbd> |
+| 주차 브레이크 | <kbd>Space</kbd> | <kbd>B</kbd> |
+| 왼쪽 방향지시등 | <kbd>]</kbd> | <kbd>1</kbd> |
+| 오른쪽 방향지시등 | <kbd>\\</kbd> | <kbd>2</kbd> |
+| 라이트 | <kbd>L</kbd> | <kbd>-</kbd> |
+| 경적 | <kbd>H</kbd> | <kbd>A</kbd> |
+| 와이퍼 | <kbd>P</kbd> | <kbd>+</kbd> |
+| 인테리어 카메라 | <kbd>1</kbd> | <kbd>Home</kbd> |
 
 ## 둘러보기
 
