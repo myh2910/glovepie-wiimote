@@ -1,3 +1,19 @@
+if var.Init = 0 {
+	var.Angle = 80
+	var.Init = 1
+}
+
+if Keyboard.Z = true {
+	var.Angle = 80
+} else if Keyboard.X = true {
+	var.Angle = 150
+} else if Keyboard.C = true {
+	var.Angle = 260
+}
+
+PPJoy.Analog0 = Smooth(RemoveUnits(MapRange(Wiimote.SmoothPitch, -var.Angle, var.Angle, -1, 1)))
+// PPJoy1.Analog1 = Smooth(MapRange(BalanceBoard.WeightLeft, 0.90, 1, 0, 1)
+// PPJoy1.Analog2 = Smooth(MapRange(BalanceBoard.WeightRight, 0.90, 1, 0, 1)
 PPJoy1.Digital0 = Wiimote1.Up
 PPJoy1.Digital1 = Wiimote1.Down
 PPJoy1.Digital2 = Wiimote1.Left
@@ -9,15 +25,3 @@ PPJoy1.Digital7 = Wiimote.Plus
 PPJoy1.Digital8 = Wiimote.Minus
 PPJoy1.Digital9 = Wiimote.A
 PPJoy1.Digital10 = Wiimote.B
-
-// 80, 150, 260
-PPJoy.Analog0 = smooth(removeunits(maprange(Wiimote.SmoothPitch, -150, 150, -1, 1)))
-// PPJoy1.Analog1 = (BalanceBoard.WeightLeft + 1.6) / 5
-// PPJoy1.Analog2 = (BalanceBoard.WeightRight - 2.1) / 5
-
-// if PPJoy1.Analog2 > 0.5 {
-// 	PPJoy1.Analog1 = 0
-// }
-// if PPJoy1.Analog1 > 0.5 {
-// 	PPJoy1.Analog2 = 0
-// }

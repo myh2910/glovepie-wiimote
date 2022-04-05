@@ -9,8 +9,8 @@
 2. PPJoySetup-0.8.4.6.exe 파일을 실행하여 PPJoy 드라이버를 실행시킨다. 새로운 창이 뜨면 `Add -> Add ->
 	Done` 버튼을 차례로 클릭하여 새로운 조이스틱을 추가한다.
 
-3. Windows 제어판을 켜서 하드웨어 및 소리 부분에 있는 장치 추가를 클릭한 뒤, Wii 리모컨의 1과 2 버튼을 동시에 5초 동안
-	누르고 있는다. Wii 리모컨이 인식되면 `Cancel -> Cancel` 버튼을 차례로 클릭하여 필요한 파일을 설치한다.
+3. 블루투스를 킨 뒤 Windows 제어판을 켜서 하드웨어 및 소리 밑에 있는 장치 추가를 클릭한 뒤, Wii 리모컨의 1과 2 버튼을
+	동시에 5초 동안 누른다. Wii 리모컨이 인식되면 `Cancel -> Cancel` 버튼을 차례로 클릭하여 필요한 파일을 설치한다.
 
 4. GlovePIE.exe 파일을 실행하여 `File -> Open` 버튼을 차례로 클릭하여 실행하고자 하는 .PIE 파일을 연 뒤, Run
 	버튼을 클릭하여 스크립트를 실행시킨다. 이제 GlovePIE가 실행되는 동안 Wii 리모컨으로 게임이 가능하다.
@@ -21,7 +21,8 @@
 
 다음은 Wii 리모컨의 기본 스크립트이다.
 
-```js
+```rust
+PPJoy.Analog0 = Smooth(RemoveUnits(MapRange(Wiimote.SmoothPitch, -80, 80, -1, 1)))
 PPJoy1.Digital0 = Wiimote1.Up
 PPJoy1.Digital1 = Wiimote1.Down
 PPJoy1.Digital2 = Wiimote1.Left
@@ -33,8 +34,6 @@ PPJoy1.Digital7 = Wiimote.Plus
 PPJoy1.Digital8 = Wiimote.Minus
 PPJoy1.Digital9 = Wiimote.A
 PPJoy1.Digital10 = Wiimote.B
-
-PPJoy.Analog0 = smooth(removeunits(maprange(Wiimote.SmoothPitch, -150, 150, -1, 1)))
 ```
 
 ## 유로 트럭 시뮬레이터 2 설정
