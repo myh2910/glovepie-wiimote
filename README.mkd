@@ -1,0 +1,61 @@
+# Windows에서 닌텐도 Wii 리모컨으로 게임하기
+
+## 실행 순서
+
+1. 다음 파일들을 내려받아 압축을 푼다.
+	* <https://github.com/Ravbug/GlovePIE/releases/download/Release/GlovePIE-0.43.zip>
+	* <https://github.com/elitak/PPJoy/releases/download/v0.8.4.6/PPJoySetup-0.8.4.6.zip>
+
+2. PPJoySetup-0.8.4.6.exe 파일을 실행하여 PPJoy 드라이버를 실행시킨다. 새로운 창이 뜨면 `Add -> Add ->
+	Done` 버튼을 차례로 클릭하여 새로운 조이스틱을 추가한다.
+
+3. Windows 제어판을 켜서 하드웨어 및 소리 부분에 있는 장치 추가를 클릭한 뒤, Wii 리모컨의 1과 2 버튼을 동시에 5초 동안
+	누르고 있는다. Wii 리모컨이 인식되면 `Cancel -> Cancel` 버튼을 차례로 클릭하여 필요한 파일을 설치한다.
+
+4. GlovePIE.exe 파일을 실행하여 `File -> Open` 버튼을 차례로 클릭하여 실행하고자 하는 .PIE 파일을 연 뒤, Run
+	버튼을 클릭하여 스크립트를 실행시킨다. 이제 GlovePIE가 실행되는 동안 Wii 리모컨으로 게임이 가능하다.
+
+5. 마지막으로 게임을 끈 뒤 Stop 버튼을 클릭하여 실행되고 있는 스크립트를 중단한다.
+
+## GlovePIE 스크립트
+
+다음은 Wii 리모컨의 기본 스크립트이다.
+
+```java
+PPJoy.Analog0 = smooth(removeunits(maprange(Wiimote.SmoothPitch, -150, 150, -1, 1)))
+
+PPJoy1.Digital6 = Wiimote1.Up
+PPJoy1.Digital14 = Wiimote1.Down
+PPJoy1.Digital4 = Wiimote1.Left
+PPJoy1.Digital1 = Wiimote1.Right
+PPJoy1.Digital0 = Wiimote.One
+PPJoy1.Digital7 = Wiimote.Two
+PPJoy1.Digital5 = Wiimote.Home
+PPJoy1.Digital10 = Wiimote.Plus
+PPJoy1.Digital12 = Wiimote.Minus
+PPJoy1.Digital15 = Wiimote.A
+PPJoy1.Digital13 = Wiimote.B
+```
+
+## 유로 트럭 시뮬레이터 2 설정
+
+스티어링 강도는 높게, 스티어링 비선형은 낮게 설정한다. 아래는 키 & 버튼의 설정이다.
+
+| 기능 | 기본 키 설정 | 보조 키 설정 |
+| - | - | - |
+| 가속 | W | Joy Button 1 |
+| 브레이크 / 후진 | S | Joy Button 4 |
+| 스티어링 좌측 | A | Joy Button 6 |
+| 스티어링 우측 | D | Joy Button 14 |
+| 주차 브레이크 | Space | Joy Button 13 |
+| 왼쪽 방향지시등 | ] | Joy Button 0 |
+| 오른쪽 방향지시등 | 역슬래시 | Joy Button 7 |
+| 라이트 | L | Joy Button 12 |
+| 경적 | H | Joy Button 15 |
+| 와이퍼 | P | Joy Button 10 |
+| 인테리어 카메라 | 1 | Joy Button 5 |
+
+## 정보 출처
+
+* <https://www.youtube.com/watch?v=QH6h2dO_eYY>
+* <https://m.blog.naver.com/truecg/10154582210>
