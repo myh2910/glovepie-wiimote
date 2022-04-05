@@ -1,3 +1,15 @@
+PPJoy1.Digital0 = Wiimote1.Up
+PPJoy1.Digital1 = Wiimote1.Down
+PPJoy1.Digital2 = Wiimote1.Left
+PPJoy1.Digital3 = Wiimote1.Right
+PPJoy1.Digital4 = Wiimote.One
+PPJoy1.Digital5 = Wiimote.Two
+PPJoy1.Digital6 = Wiimote.Home
+PPJoy1.Digital7 = Wiimote.Plus
+PPJoy1.Digital8 = Wiimote.Minus
+PPJoy1.Digital9 = Wiimote.A
+PPJoy1.Digital10 = Wiimote.B
+
 // 80, 150, 260
 PPJoy.Analog0 = smooth(removeunits(maprange(Wiimote.SmoothPitch, -150, 150, -1, 1)))
 // PPJoy1.Analog1 = (BalanceBoard.WeightLeft + 1.6) / 5
@@ -9,15 +21,3 @@ PPJoy.Analog0 = smooth(removeunits(maprange(Wiimote.SmoothPitch, -150, 150, -1, 
 // if PPJoy1.Analog1 > 0.5 {
 // 	PPJoy1.Analog2 = 0
 // }
-
-PPJoy1.Digital6 = Wiimote1.Up
-PPJoy1.Digital14 = Wiimote1.Down
-PPJoy1.Digital4 = Wiimote1.Left
-PPJoy1.Digital1 = Wiimote1.Right
-PPJoy1.Digital0 = Wiimote.One
-PPJoy1.Digital7 = Wiimote.Two
-PPJoy1.Digital5 = Wiimote.Home
-PPJoy1.Digital10 = Wiimote.Plus
-PPJoy1.Digital12 = Wiimote.Minus
-PPJoy1.Digital15 = Wiimote.A
-PPJoy1.Digital13 = Wiimote.B
