@@ -21,7 +21,7 @@
 
 다음은 Wii 리모컨의 기본 스크립트이다.
 
-```java
+```js
 PPJoy.Analog0 = smooth(removeunits(maprange(Wiimote.SmoothPitch, -150, 150, -1, 1)))
 
 PPJoy1.Digital6 = Wiimote1.Up
