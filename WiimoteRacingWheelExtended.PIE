@@ -1,21 +1,21 @@
 if var.Init = 0 {
-	// 레이싱 휠의 최대 각도. 더 클수록 미세한 컨트롤이 가능하지만 그만큼 회전 각도가 줄어든다.
-	var.Angle = 80
+	// Big number allows finer control, but the angle of rotation is reduced.
+	var.MaxAngle = 80
 	var.Init = 1
 }
 
 if Keyboard.Z = true {
-	// 승용차
-	var.Angle = 80
+	// Car
+	var.MaxAngle = 80
 } else if Keyboard.X = true {
-	// 보통 트럭
-	var.Angle = 150
+	// Normal truck
+	var.MaxAngle = 150
 } else if Keyboard.C = true {
-	// 큰 트럭
-	var.Angle = 260
+	// Big truck
+	var.MaxAngle = 260
 }
 
-PPJoy.Analog0 = Smooth(RemoveUnits(MapRange(Wiimote.SmoothPitch, -var.Angle, var.Angle, -1, 1)))
+PPJoy.Analog0 = Smooth(RemoveUnits(MapRange(Wiimote.SmoothPitch, -var.MaxAngle, var.MaxAngle, -1, 1)))
 // PPJoy.Analog1 = Smooth(MapRange(BalanceBoard.WeightLeft, 0.90, 1, 0, 1))
 // PPJoy.Analog2 = Smooth(MapRange(BalanceBoard.WeightRight, 0.90, 1, 0, 1))
 PPJoy.Digital0 = Wiimote.Up
