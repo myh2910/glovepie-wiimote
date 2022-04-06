@@ -1,27 +1,31 @@
 if var.Init = 0 {
+	// 레이싱 휠의 최대 각도. 더 클수록 미세한 컨트롤이 가능하지만 그만큼 회전 각도가 줄어든다.
 	var.Angle = 80
 	var.Init = 1
 }
 
 if Keyboard.Z = true {
+	// 승용차
 	var.Angle = 80
 } else if Keyboard.X = true {
+	// 보통 트럭
 	var.Angle = 150
 } else if Keyboard.C = true {
+	// 큰 트럭
 	var.Angle = 260
 }
 
 PPJoy.Analog0 = Smooth(RemoveUnits(MapRange(Wiimote.SmoothPitch, -var.Angle, var.Angle, -1, 1)))
-// PPJoy1.Analog1 = Smooth(MapRange(BalanceBoard.WeightLeft, 0.90, 1, 0, 1))
-// PPJoy1.Analog2 = Smooth(MapRange(BalanceBoard.WeightRight, 0.90, 1, 0, 1))
-PPJoy1.Digital0 = Wiimote1.Up
-PPJoy1.Digital1 = Wiimote1.Down
-PPJoy1.Digital2 = Wiimote1.Left
-PPJoy1.Digital3 = Wiimote1.Right
-PPJoy1.Digital4 = Wiimote.One
-PPJoy1.Digital5 = Wiimote.Two
-PPJoy1.Digital6 = Wiimote.Home
-PPJoy1.Digital7 = Wiimote.Plus
-PPJoy1.Digital8 = Wiimote.Minus
-PPJoy1.Digital9 = Wiimote.A
-PPJoy1.Digital10 = Wiimote.B
+// PPJoy.Analog1 = Smooth(MapRange(BalanceBoard.WeightLeft, 0.90, 1, 0, 1))
+// PPJoy.Analog2 = Smooth(MapRange(BalanceBoard.WeightRight, 0.90, 1, 0, 1))
+PPJoy.Digital0 = Wiimote.Up
+PPJoy.Digital1 = Wiimote.Down
+PPJoy.Digital2 = Wiimote.Left
+PPJoy.Digital3 = Wiimote.Right
+PPJoy.Digital4 = Wiimote.One
+PPJoy.Digital5 = Wiimote.Two
+PPJoy.Digital6 = Wiimote.Home
+PPJoy.Digital7 = Wiimote.Plus
+PPJoy.Digital8 = Wiimote.Minus
+PPJoy.Digital9 = Wiimote.A
+PPJoy.Digital10 = Wiimote.B
