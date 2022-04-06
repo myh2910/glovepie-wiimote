@@ -43,7 +43,7 @@ PPJoy.Digital10 = Wiimote.B
 스티어링 강도는 높게, 스티어링 비선형은 낮게 설정한다. 아래는 키 & 버튼의 설정이다.
 
 | 기능 | 키보드 | Wii 리모컨 |
-| - | - | - |
+| --- | --- | --- |
 | 가속 | <kbd>W</kbd> | <kbd>Right</kbd> |
 | 브레이크 / 후진 | <kbd>S</kbd> | <kbd>Left</kbd> |
 | 스티어링 좌측 | <kbd>A</kbd> | <kbd>Up</kbd> |
