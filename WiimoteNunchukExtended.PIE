@@ -1,0 +1,114 @@
+if var.Init = 0 {
+	var.LeftClick = false
+	var.RightClick = false
+	var.NumCamera = 1
+	var.FrontCamera = false
+	var.Init = 1
+}
+
+debug = "Battery level: " + round(Wiimote.Battery * 25 / 48) + "%"
+
+var.SwitchCamera = false
+
+if var.LeftClick = false and Wiimote.Left {
+	var.LeftClick = true
+} else if var.LeftClick and Wiimote.Left = false {
+	var.NumCamera = ((var.NumCamera + 6) % 8) + 1
+	var.SwitchCamera = true
+	var.LeftClick = false
+}
+
+if var.RightClick = false and Wiimote.Right {
+	var.RightClick = true
+} else if var.RightClick and Wiimote.Right = false {
+	var.NumCamera = (var.NumCamera % 8) + 1
+	var.SwitchCamera = true
+	var.RightClick = false
+}
+
+if PPJoy.Digital12 and Nunchuk.JoyX >= -0.85 {
+	var.FrontCamera = true
+} else if PPJoy.Digital12 = false and (Nunchuk.JoyX < -0.85 or PPJoy.Digital14) {
+	var.FrontCamera = false
+}
+
+if PPJoy.Digital13 and Nunchuk.JoyX <= 0.85 {
+	var.FrontCamera = true
+} else if PPJoy.Digital13 = false and (Nunchuk.JoyX > 0.85 or PPJoy.Digital14) {
+	var.FrontCamera = false
+}
+
+if var.SwitchCamera {
+	if var.NumCamera = 1 {
+		Keyboard.One = true
+	} else if var.NumCamera = 2 {
+		Keyboard.Two = true
+	} else if var.NumCamera = 3 {
+		Keyboard.Three = true
+	} else if var.NumCamera = 4 {
+		Keyboard.Four = true
+	} else if var.NumCamera = 5 {
+		Keyboard.Five = true
+	} else if var.NumCamera = 6 {
+		Keyboard.Six = true
+	} else if var.NumCamera = 7 {
+		Keyboard.Seven = true
+	} else if var.NumCamera = 8 {
+		Keyboard.Eight = true
+	} else if var.NumCamera = 9 {
+		Keyboard.Nine = true
+	}
+} else {
+	Keyboard.One = false
+	Keyboard.Two = false
+	Keyboard.Three = false
+	Keyboard.Four = false
+	Keyboard.Five = false
+	Keyboard.Six = false
+	Keyboard.Seven = false
+	Keyboard.Eight = false
+	Keyboard.Nine = false
+}
+
+Keyboard.F5 = Wiimote.Down
+Keyboard.F7 = Wiimote.Up
+Keyboard.Enter = Wiimote.Home
+
+PPJoy.Analog0 = Smooth(MapRange(Nunchuk.SmoothRoll, -170, 170, -1, 1))
+// PPJoy.Analog1 = Smooth(max(Nunchuk.JoyY, 0))
+// PPJoy.Analog2 = Smooth(max(-Nunchuk.JoyY, 0))
+PPJoy.Digital2 = Nunchuk.Z
+PPJoy.Digital3 = Nunchuk.C
+PPJoy.Digital4 = Wiimote.A
+PPJoy.Digital5 = Wiimote.Plus
+PPJoy.Digital6 = Wiimote.Two
+PPJoy.Digital7 = Wiimote.One
+PPJoy.Digital8 = Wiimote.Home
+PPJoy.Digital9 = Nunchuk.JoyY > 0.85
+PPJoy.Digital10 = Nunchuk.JoyY < -0.85
+PPJoy.Digital11 = Wiimote.Minus
+PPJoy.Digital12 = Nunchuk.JoyX < -0.85
+PPJoy.Digital13 = Nunchuk.JoyX > 0.85
+PPJoy.Digital14 = var.FrontCamera
+
+/*
+조이스틱
+	상: 오른쪽 방향지시등
+	하: 왼쪽 방향지시등
+	좌: 왼쪽 카메라
+	우: 오른쪽 카메라
+	중: 정면 카메라
+
+리모컨
+	상: F7
+	하: F5 (지도 보기)
+	좌: 이전 카메라
+	우: 다음 카메라
+	A: 경적 & 좌클릭
+	B: 마우스 움직이기
+	홈: 실행 / 엔터
+	-: 주차 브레이크
+	+: 엔진 시동 / 정지
+	1: 와이퍼
+	2: 라이트
+*/

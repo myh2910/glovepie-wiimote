@@ -1,0 +1,51 @@
+if var.Init = 0 {
+	// Big number allows finer control, but the angle of rotation is reduced.
+	var.WiimotePitch = 80
+	var.Init = 1
+}
+
+debug = "Battery level: " + round(Wiimote.Battery * 25 / 48) + "%"
+
+if Keyboard.Z {
+	// Fast
+	var.WiimotePitch = 80
+} else if Keyboard.X {
+	// Normal
+	var.WiimotePitch = 160
+} else if Keyboard.C {
+	// Slow
+	var.WiimotePitch = 260
+}
+
+Keyboard.Enter = Wiimote.Home
+
+PPJoy.Analog0 = Smooth(MapRange(Wiimote.SmoothPitch, -var.WiimotePitch, var.WiimotePitch, -1, 1))
+// PPJoy.Analog0 = Smooth(MapRange(Wiimote.SteeringAngle, -360, 360, -1, 1))
+// PPJoy.Analog1 = Smooth(MapRange(BalanceBoard.WeightLeft, 0.90, 1, 0, 1))
+// PPJoy.Analog2 = Smooth(MapRange(BalanceBoard.WeightRight, 0.90, 1, 0, 1))
+PPJoy.Digital0 = Wiimote.Up
+PPJoy.Digital1 = Wiimote.Down
+PPJoy.Digital2 = Wiimote.Left
+PPJoy.Digital3 = Wiimote.Right
+PPJoy.Digital4 = Wiimote.A
+PPJoy.Digital5 = Wiimote.B
+PPJoy.Digital6 = Wiimote.Minus
+PPJoy.Digital7 = Wiimote.Plus
+PPJoy.Digital8 = Wiimote.Home
+PPJoy.Digital9 = Wiimote.One
+PPJoy.Digital10 = Wiimote.Two
+
+/*
+리모컨 (가로 기준)
+	상: 가속
+	하: 브레이크 / 후진
+	좌: 스티어링 좌측
+	우: 스티어링 우측
+	A: 경적
+	B: 엔진 시동 / 정지
+	홈: 실행 / 엔터
+	-: 라이트
+	+: 와이퍼
+	1: 왼쪽 방향지시등
+	2: 오른쪽 방향지시등
+*/
