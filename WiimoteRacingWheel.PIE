@@ -4,7 +4,7 @@ if var.Init = 0 {
 	var.Init = 1
 }
 
-debug = "Battery level: " + round(Wiimote.Battery * 25 / 48) + "%"
+// debug = "Battery level: " + round(Wiimote.Battery * 25 / 48) + "%"
 
 if Keyboard.Z {
 	// Fast
