@@ -31,7 +31,7 @@
 
 ## GlovePIE 스크립트
 
-다음은 GlovePIE 스크립트 예시다. 자세한 건 GlovePIE의 [GitHub 위키](https://github.com/Ravbug/GlovePIE/wiki)<sup>([Syntax](https://github.com/Ravbug/GlovePIE/wiki/GlovePIE-Scripts-and-Syntax), [Wiimote](https://github.com/Ravbug/GlovePIE/wiki/Wiimote-(Nintendo-Wii-Remote)), [PPJoy](https://github.com/Ravbug/GlovePIE/wiki/Joysticks,-PPJoy,-and-Kinect#ppjoy))</sup>를 참조하자.
+다음은 GlovePIE 스크립트 예시다. 자세한 건 [GlovePIE 위키](https://github.com/Ravbug/GlovePIE/wiki)<sup>([Syntax](https://github.com/Ravbug/GlovePIE/wiki/GlovePIE-Scripts-and-Syntax), [Wiimote](https://github.com/Ravbug/GlovePIE/wiki/Wiimote-(Nintendo-Wii-Remote)), [PPJoy](https://github.com/Ravbug/GlovePIE/wiki/Joysticks,-PPJoy,-and-Kinect#ppjoy))</sup>를 참조.
 
 ```rust
 PPJoy.Analog0 = Smooth(MapRange(Wiimote.SmoothPitch, -80, 80, -1, 1))
