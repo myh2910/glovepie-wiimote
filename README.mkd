@@ -6,8 +6,17 @@
 	* <https://github.com/elitak/PPJoy/releases/download/v0.8.4.6/PPJoySetup-0.8.4.6.zip>
 	* <https://github.com/Ravbug/GlovePIE/releases/download/Release/GlovePIE-0.43.zip>
 
-2. PPJoySetup-0.8.4.6.exe 파일을 실행하여 PPJoy 드라이버를 실행시킨다. 새로운 창이 뜨면 `Add -> Add ->
+2. PPJoySetup-0.8.4.6.exe를 실행하여 PPJoy 드라이버를 실행시킨다. 새로운 창이 뜨면 `Add -> Add ->
 	Done` 버튼을 차례로 클릭하여 새로운 조이스틱을 추가한다.
+
+	![Error](assets/err1.png)  
+	만약 이러한 에러 메세지가 뜨면 확인을 눌러준 뒤
+
+	![Error](assets/err2.png)  
+	이러한 메세지가 뜨면 확인을 눌러서 컴퓨터를 재시작한다.
+
+	![Test mode](assets/test-mode.png)  
+	화면 하단 모서리에 테스트 모드 워터마크가 뜨는 경우, 검색 상자에 `cmd`를 입력한 다음 관리자 권한으로 실행을 선택하고, `bcdedit -set TESTSIGNING OFF`를 입력한 뒤 <kbd>Enter</kbd> 키를 누른다. 이제 컴퓨터를 재시작하면 워터마크가 없어진다.
 
 ## 실행
 
@@ -22,7 +31,7 @@
 
 ## GlovePIE 스크립트
 
-다음은 Wii 리모컨의 기본 스크립트이다.
+다음은 GlovePIE 스크립트 예시다. 자세한 건 GlovePIE의 [GitHub 위키](https://github.com/Ravbug/GlovePIE/wiki)<sup>([Syntax](https://github.com/Ravbug/GlovePIE/wiki/GlovePIE-Scripts-and-Syntax), [Wiimote](https://github.com/Ravbug/GlovePIE/wiki/Wiimote-(Nintendo-Wii-Remote)), [PPJoy](https://github.com/Ravbug/GlovePIE/wiki/Joysticks,-PPJoy,-and-Kinect#ppjoy))</sup>를 참조하자.
 
 ```rust
 PPJoy.Analog0 = Smooth(MapRange(Wiimote.SmoothPitch, -80, 80, -1, 1))
@@ -49,17 +58,20 @@ PPJoy.Digital10 = Wiimote.Two
 | 브레이크 / 후진 | <kbd>S</kbd> | <kbd>Left</kbd> | <kbd>Z</kbd> |
 | 스티어링 좌측 | <kbd>A</kbd> | <kbd>Up</kbd> | |
 | 스티어링 우측 | <kbd>D</kbd> | <kbd>Down</kbd> | |
+| 엔진 시동/정지 | <kbd>E</kbd> | | <kbd>+</kbd> |
 | 주차 브레이크 | <kbd>Space</kbd> | <kbd>B</kbd> | <kbd>-</kbd> |
-| 왼쪽 방향지시등 | <kbd>]</kbd> | <kbd>1</kbd> | 조이스틱 하 |
-| 오른쪽 방향지시등 | <kbd>\\</kbd> | <kbd>2</kbd> | 조이스틱 상 |
+| 왼쪽 방향지시등 | <kbd>]</kbd> | <kbd>1</kbd> | <kbd>Joy Down</kbd> |
+| 오른쪽 방향지시등 | <kbd>\\</kbd> | <kbd>2</kbd> | <kbd>Joy Up</kbd> |
 | 라이트 | <kbd>L</kbd> | <kbd>-</kbd> | <kbd>2</kbd> |
 | 경적 | <kbd>H</kbd> | <kbd>A</kbd> | <kbd>A</kbd> |
 | 와이퍼 | <kbd>P</kbd> | <kbd>+</kbd> | <kbd>1</kbd> |
 | 실행 | <kbd>Enter</kbd> | <kbd>Home</kbd> | <kbd>Home</kbd> |
+| 경로 관리자 진단 페이지 | <kbd>F7</kbd> | | <kbd>Up</kbd> |
+| 경로 관리자 네비게이션 페이지 | <kbd>F5</kbd> | | <kbd>Down</kbd> |
 
 ## 둘러보기
 
 * [PPJoy](https://github.com/elitak/PPJoy)
 * [GlovePIE](https://github.com/Ravbug/GlovePIE)
-* [유튜브 영상](https://www.youtube.com/watch?v=QH6h2dO_eYY)
-* [네이버 포스트](https://m.blog.naver.com/truecg/10154582210)
+* [관련 유튜브 영상](https://www.youtube.com/watch?v=QH6h2dO_eYY)
+* [관련 네이버 포스트](https://m.blog.naver.com/truecg/10154582210)
