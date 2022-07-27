@@ -1,0 +1,28 @@
+// debug = "[1]: " + round(Wiimote1.Battery * 25 / 48) + "%, [2]: " + round(Wiimote2.Battery * 25 / 48) + "%"
+
+PPJoy.Digital0 = Wiimote1.Down
+PPJoy.Digital1 = Wiimote1.Right
+PPJoy.Digital2 = Wiimote1.Up
+PPJoy.Digital3 = Wiimote1.Left
+
+PPJoy.Digital4 = Wiimote1.A
+PPJoy.Digital5 = Wiimote1.Home
+PPJoy.Digital6 = Wiimote1.B
+
+PPJoy.Digital7 = Wiimote2.One
+PPJoy.Digital8 = Wiimote1.One
+PPJoy.Digital9 = Wiimote2.Nunchuk.C
+PPJoy.Digital10 = Wiimote1.Nunchuk.C
+
+PPJoy.Digital11 = Wiimote2.Up
+PPJoy.Digital12 = Wiimote2.Left
+PPJoy.Digital13 = Wiimote2.Down
+PPJoy.Digital14 = Wiimote2.Right
+
+PPJoy.Analog0 = Wiimote2.Nunchuk.JoyX
+PPJoy.Analog1 = Wiimote2.Nunchuk.JoyY
+PPJoy.Analog2 = Wiimote1.Nunchuk.JoyX
+PPJoy.Analog3 = Wiimote1.Nunchuk.JoyY
+
+PPJoy.Digital15 = Wiimote2.Nunchuk.Z
+PPJoy.Digital16 = Wiimote1.Nunchuk.Z

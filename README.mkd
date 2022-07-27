@@ -6,17 +6,11 @@
 	* <https://github.com/elitak/PPJoy/releases/download/v0.8.4.6/PPJoySetup-0.8.4.6.zip>
 	* <https://github.com/Ravbug/GlovePIE/releases/download/Release/GlovePIE-0.43.zip>
 
-2. PPJoySetup-0.8.4.6.exe를 실행하여 PPJoy 드라이버를 실행시킨다. 새로운 창이 뜨면 `Add -> Add ->
+2. 컴퓨터가 테스트 모드로 실행되지 않은 경우, `bcdedit -set TESTSIGNING ON`을 관리자 권한으로 실행한 뒤 컴퓨터를 재시작한다. 그 다음 PPJoySetup-0.8.4.6.exe를 실행하여 PPJoy 드라이버를 실행시킨다. 새로운 창이 뜨면 `Add -> Add ->
 	Done` 버튼을 차례로 클릭하여 새로운 조이스틱을 추가한다.
 
-	![Error](assets/err1.png)  
-	만약 이러한 에러 메세지가 뜨면 확인을 눌러준 뒤
-
-	![Error](assets/err2.png)  
-	이러한 메세지가 뜨면 확인을 눌러서 컴퓨터를 재시작한다.
-
 	![Test mode](assets/test-mode.png)  
-	화면 하단 모서리에 테스트 모드 워터마크가 뜨는 경우, 검색 상자에 `cmd`를 입력한 다음 관리자 권한으로 실행을 선택하고, `bcdedit -set TESTSIGNING OFF`를 입력한 뒤 <kbd>Enter</kbd> 키를 누른다. 이제 컴퓨터를 재시작하면 워터마크가 없어진다.
+	화면 하단 모서리에 이러한 워터마크가 뜰 텐데, PPJoy 드라이버를 실행하려면 어쩔 수 없는 것이므로 만약 없애려면 관리자 권한으로 `bcdedit -set TESTSIGNING OFF`를 실행하고 컴퓨터를 재시작한다.
 
 ## 실행
 
