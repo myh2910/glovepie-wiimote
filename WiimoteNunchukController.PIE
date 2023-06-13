@@ -26,3 +26,5 @@ PPJoy.Analog3 = Wiimote1.Nunchuk.JoyY
 
 PPJoy.Digital15 = Wiimote2.Nunchuk.Z
 PPJoy.Digital16 = Wiimote1.Nunchuk.Z
+
+// vim: ft=rust
